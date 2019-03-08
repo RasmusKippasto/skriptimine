@@ -24,3 +24,6 @@ git remote add skriptimine https://github.com/kasutajanimi/reponimi.git
 
 b) git remote kontroll
 git remote -v
+
+c) lisa kaugrepositooriumi
+git push -uf skriptimine master
