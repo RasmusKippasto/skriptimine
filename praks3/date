@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DAY=$(date +"%A, %B %d-%Y") #loob variable DAY
+TIME=$(date +"%H:%M") #loob variable TIME
+
+echo "Today is $DAY" #Echot kirjutavad neis oleva teksti käsu reale 
+echo "Time is $TIME"
+echo -e -n "\nCalender of" 
+cal #cal commandiga kirjutatakse kalender käsu reale
