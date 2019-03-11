@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Rasmus Kippasto"
+echo "Õppisin skriptima bashiga"
+echo "Antud aine tundub lihtne"
+echo "Praegu tundub lihtne kuid loodan, et tuleb raskemaid ülesandeid"
