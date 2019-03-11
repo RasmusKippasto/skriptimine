@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -n "Tere, "
+echo -n "Rasmus"
+echo "!"
