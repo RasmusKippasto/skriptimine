@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo -n "skriptimine at"
+echo -n $HOSTNAME "at"
 uptime | cut -f1 -d","
