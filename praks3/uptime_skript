@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo -n "skriptimine at"
+uptime | cut -f1 -d","
