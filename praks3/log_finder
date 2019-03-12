@@ -1,3 +1,3 @@
 #!/bin/bash
-
-find /var -name "*.log" 2>/dev/null -exec wc -l {} + | sort -rn
+#otsib faile ja sorteerib need ridade arvut järgi
+find /var -name "*.log" 2>/dev/null -exec wc -l {} + | sort -rn | cut -c7- | sed -n '1!p' 
