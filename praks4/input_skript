@@ -1,0 +1,9 @@
+#!/bin/bash
+#Skript küsib kasutaja ees ja perekonna nime ja esitab selle
+tervitus() {
+	echo "Mis on sinu ees ja perekonna nimi?"
+	read name
+	echo "Teretulemast, $name"
+}
+
+tervitus
