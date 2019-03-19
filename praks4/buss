@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -n "Reisijate arv: "; read reisijad
+echo -n "Bussi kohtade arv : "; read kohad
+
+busse_vaja=$((( $reisijad / $kohad ) + ( $reisijad % kohad > 0 )))
+echo "Reisi jaoks on vaja $busse_vaja bussi."
