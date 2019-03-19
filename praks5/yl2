@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo -n "Sisesta 1 kylje pikkus (cm): "; read a
+echo -n "Sisesta 2 kylje pikkus (cm): "; read b
+echo -n "Sisesta 3 kylje pikkus (cm): "; read c
+
+p=$(bc <<< "scale=2;($a + $b + $c) / 2") #Kolmnurga pool ümbermõõdust
+pindala=$(bc <<< "scale=2;sqrt($p * ($p - $a) * ($p - $b) * ($p - $c))")
+echo "Kolmnurga pindala on $pindala cm" 
