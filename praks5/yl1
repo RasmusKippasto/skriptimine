@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -n "Sisesta täisnurkse kolmnurga 1 külg cm-tes: "; read a
+echo -n "Sisesta täisnurkse kolmnurga 2 külg cm-tes: "; read b
+
+vastus=$(bc <<< "scale=2;sqrt($a^2 + $b^2)")
+echo "Antud kolmnurga hüpotenuus on $vastus cm" 
