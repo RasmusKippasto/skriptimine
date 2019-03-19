@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Mis on aluskandiku pikkus cm-tes?"
+read pikkus
+echo "Mis on aluskandiku laius cm-tes?"
+read laius
+echo "Kui suured on kypsiste diameeter cm-tes?"
+read kypsis
+echo "Mitu kihti on tordil?"
+read kihid
+echo "Mitu kypsist on ühes pakis?"
+read pakkis
+
+aluskandik=$(( $pikkus * $laius ))
+kypsissuurus=$((( $kypsis / 2 ) ** 2 * 3 ))
+kihil=$((( $aluskandik / $kypsissuurus ) + ( $aluskandik % $kypsissuurus > 0 )))
+kokku=$(( $kihil * $kihid ))
+pakkid=$((( $kokku / $pakkis ) + ( $kokku % $pakkis > 0 )))
+echo "Vaja läheb $pakkid pakki püpsiseid koogi tegemiseks."
