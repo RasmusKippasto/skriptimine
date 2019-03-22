@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -n "Sisesta number: "; read num
+if (( $num % 2 == 0 ))
+then
+	echo "Sa sisestasid paaris arvu!"
+else
+	echo "Sa sisestasid paaritu arvu!"
+fi 
+
