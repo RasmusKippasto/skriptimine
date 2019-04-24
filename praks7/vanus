@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo -n "Sinu vanus: "; read vanus
+
+if [ $vanus  -le 11 ]; then
+	echo "Oled laps"
+elif [ $vanus -le 18 ]; then
+	echo "Oled nooruk"
+elif [ $vanus -le 63 ]; then
+	echo "Oled taiskasvanud"
+elif [ $vanus -ge  64 ]; then
+	echo "Oled senjoor"
+else
+	echo "Peate sisestama taisnumbri"
+fi
