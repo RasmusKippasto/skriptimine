@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo -n "Sisesta aja vaartus: "; read aeg
+
+if [ $aeg -ge 6 -a $aeg -le 11 ]; then
+	echo "Tere hommikust!"
+elif [ $aeg -ge 12 -a $aeg -le 17 ]; then
+	echo "Tere paevast!"
+elif [ $aeg -ge 18 -a $aeg -le 21 ]; then
+	echo "Tere ohtust!"
+elif [ $aeg -ge 22 -a $aeg -le 24 ] || [ $aeg -ge 0 -a $aeg -le 5 ]; then
+	echo "Head ood!"
+else
+	echo "Sisestage aeg väärtuses 0-24"
+fi
