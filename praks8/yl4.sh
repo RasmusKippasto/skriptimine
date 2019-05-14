@@ -16,3 +16,20 @@ if (( $match <= 2 ));then
 else
 	echo "$arv - ei ole algarv"
 fi
+
+
+for (( num=1; num<=20; num++ ))
+do
+	jagub=0
+	for (( div=1; div<=$num; div++))
+	do
+		jaak=$(($num % $div))
+		if ((jaak == 0)); then
+			let jagub++
+		fi
+	done
+
+	if ((jagub <= 2));then
+		echo "$num-on algarv"
+	fi
+done
