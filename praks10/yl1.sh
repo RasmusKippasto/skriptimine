@@ -1,7 +1,7 @@
 #!/bin/bash
 read -p "Kasutaja nimi: " nimi
 read -p "Kasutaja grup(opilane/opetaja): " grup
-
+echo ""
 
 w='[a-zA-Z.]'
 loop=1
@@ -17,7 +17,7 @@ done
 
 
 loop=1
-while [[ $grup != 'opetaja' || $grup != "opilane" ]]
+while [[ $grup != "opetaja" && $grup != "opilane" ]]
 do
 	echo "Sisestatud gruppi ei leitud"
 	read -p "Kasutaja grup(opilane/opetaja): " grup
@@ -36,6 +36,20 @@ do
 	valitud=${valik[$valija2]}
 	passwd=$passwd$valitud
 done
-
-#sudo adduser $nimi --gecos "$nimi,,," --disabled-password
-#echo "$nimi:$passwd" | sudo chpasswd
+echo "Kasutaja $nimi loomine...."
+sudo useradd $nimi -s /bin/bash
+sudo usermod -a -G $grup $nimi
+echo "Kasutaja $nimi kodu kataloogi loomine...."
+sudo mkdir /home/$nimi
+sudo cp -a /etc/skel/. /home/$nimi
+sudo touch /home/$nimi/parool
+sudo chmod 777 /home/$nimi/parool
+sudo echo "KUSTUTA SEE FAIL PÄRAST PAROOLI MEELDE JÄRMIST" >> /home/$nimi/parool
+sudo echo "Kasutaja: $nimi" >> /home/$nimi/parool
+sudo echo "Parool: $passwd" >> /home/$nimi/parool
+sudo chmod 760 /home/$nimi/parool
+sudo chown $nimi:$nimi /home/$nimi
+sudo chown $nimi:$nimi /home/$nimi/parool
+echo "Kasutaja $nimi parooli loomine...."
+sudo echo "$nimi:$passwd" | sudo chpasswd
+echo "Edukalt loodud kasutaja $nimi(Parool:$passwd, Kodukaust:/home/$nimi, Grupis:$grup)"
