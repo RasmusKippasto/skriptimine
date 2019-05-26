@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r "Mis on kell(sisesta praegune tund): " aeg
+read -p "Mis on kell(sisesta praegune tund): " aeg
 kasutaja=$(whoami)
 
 if [ $aeg -ge 6 -a $aeg -le 11 ]; then
