@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo -n "Siesesta kuu number: "; read kuu
+
+if (( $kuu < 1 || $kuu > 12 )); then
+	echo "Antud kuu numbrit pole, sisestage kuu number [1-12]"
+elif (( $kuu == 1 || $kuu == 2 || $kuu == 12 )); then
+	echo "Antud kuul on talv"
+elif (( $kuu == 3 || $kuu <= 5 )); then
+	echo "Antud kuul on kevad"
+elif (( $kuu == 6 || $kuu <= 8 )); then
+	echo "Antud kuul on suvi"
+elif (( $kuu == 9 || $kuu <= 11 )); then
+	echo "Antud kuul on sygis"
+
+fi
